@@ -1,7 +1,16 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Functions that cache the inverse of a matrix
+## Usage example:
+##
+## > source('cachematrix.R')
+## > m <- makeCacheMatrix(matrix(c(2, 0, 0, 2), c(2, 2)))
+## > cacheSolve(m)
+##      [,1] [,2]
+## [1,]  0.5  0.0
+## [2,]  0.0  0.5
 
-## Write a short comment describing this function
+## Create a special "matrix", which is a list containing a function to
+##   - set and get the value of the matrix
+##   - set and get the value of the inverse matrix
 
 makeCacheMatrix <- function(x = matrix()) {
 	inv <-NULL
@@ -17,7 +26,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cache Solve calculate the inverse of the special "matrix" created with the above function, reusing cached result if available
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
